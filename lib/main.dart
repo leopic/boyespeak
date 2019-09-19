@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(BoyeSpeakApp());
 
-class MyApp extends StatelessWidget {
+class BoyeSpeakApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,27 +11,27 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
       ),
-      home: MyHomePage(title: 'b o y e  s p e a k ', context: context),
+      home: BoyeSpeak(title: 'b o y e  s p e a k ', context: context),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title, this.context}) : super(key: key);
+class BoyeSpeak extends StatefulWidget {
+  BoyeSpeak({Key key, this.title, this.context}) : super(key: key);
 
   final String title;
   BuildContext context;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _BoyeSpeakState createState() => _BoyeSpeakState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _BoyeSpeakState extends State<BoyeSpeak> {
   String _pasteBoard = '';
   final textEditingController = TextEditingController();
 
   void _translate(BuildContext context) {
-    setState(() async {
+    setState(() {
       var out = '';
 
       textEditingController.text.runes.forEach((int rune) {
